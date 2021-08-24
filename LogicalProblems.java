@@ -1,19 +1,30 @@
 package com.bridgelabz.LogicalProblems;
 
-
+import java.util.Scanner;
 public class LogicalProblems 
 {
-    public static void main( String[] args )
-    {
-    	int n1 = 0, n2 = 1, n3, i, count = 20;    
-    	 System.out.print(n1+" "+n2);    
-    	    
-    	 for(i = 2; i < count; ++i)    
-    	 {    
-    	  n3=n1+n2;    
-    	  System.out.print(" "+n3);    
-    	  n1=n2;    
-    	  n2=n3;    
-    	 }    
-     }
-}
+	static long isPerfect(long num)  
+	{        
+	long sum = 0;    
+	for(int i=1; i <= num/2; i++)  
+	{  
+	if(num % i == 0)  
+	{    
+	sum = sum + i;  
+	}  
+	}  
+	return sum;   
+	}  
+	public static void main(String args[])    
+	{  
+	long number, s;  
+	Scanner sc = new Scanner(System.in);         
+	System.out.print("Enter the number: ");    
+	number = sc.nextLong();  
+	s = isPerfect(number);    
+	if (s == number)  
+	System.out.println(number+" is a Perfect Number");  
+	else  
+	System.out.println(number+" is not a Perfect Number");   
+	}   
+	}  
