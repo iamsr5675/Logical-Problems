@@ -3,28 +3,31 @@ package com.bridgelabz.LogicalProblems;
 import java.util.Scanner;
 public class LogicalProblems 
 {
-	static long isPerfect(long num)  
-	{        
-	long sum = 0;    
-	for(int i=1; i <= num/2; i++)  
-	{  
-	if(num % i == 0)  
-	{    
-	sum = sum + i;  
-	}  
-	}  
-	return sum;   
-	}  
-	public static void main(String args[])    
-	{  
-	long number, s;  
-	Scanner sc = new Scanner(System.in);         
-	System.out.print("Enter the number: ");    
-	number = sc.nextLong();  
-	s = isPerfect(number);    
-	if (s == number)  
-	System.out.println(number+" is a Perfect Number");  
-	else  
-	System.out.println(number+" is not a Perfect Number");   
-	}   
-	}  
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		  int i, n, m = 0, f = 0;      
+		  System.out.println("Enter the number:");
+		  n = sc.nextInt();
+		  m = n / 2;      
+		  if ( n == 0 || n == 1 )
+		  {  
+		   System.out.println(n+" is not Prime Number");      
+		  }
+		  else
+		  {  
+		   for(i=2;i<=m;i++)
+		   {      
+		    if(n%i==0)
+		    {      
+		     System.out.println(n+" is not Prime Number");      
+		     f = 1;      
+		     break;      
+		    }      
+		   }      
+		   if (f == 0)  
+		   {
+			   System.out.println(n+" is Prime Number"); }  
+		  }
+		}    
+		}   
