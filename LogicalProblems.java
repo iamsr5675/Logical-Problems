@@ -3,26 +3,30 @@ package com.bridgelabz.LogicalProblems;
 import java.util.Scanner;
 public class LogicalProblems 
 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the no. of coupons:");
-		int n = sc.nextInt();
-		char[] s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
+	public static void main(String[] args)
+    {
+       long st=0;
+       long sp=0;
+       long time=0;
 
-		System.out.println(s[1]);
+       Scanner sc = new Scanner(System.in);
+      System.out.println("Press 0 to start time");
+      int n = sc.nextInt();
+      if( n == 0 )
+         { 
+             st = System.currentTimeMillis();
+         }
+       System.out.println("Press 1 to stop time");
+       int m=sc.nextInt();
+       if( m == 1 )
+         { 
+             sp = System.currentTimeMillis();
+         }
+     
+       System.out.println("Time duration between start and stop");
+         time = ( sp - st ) / 1000;
+       System.out.println(time+" is seconds");
+     
 
-		for (int i = 0; i < n; i++) {
-			int random = (int) (Math.random() * 999999999);
-															
-			StringBuffer sb = new StringBuffer();
-			while (random > 0) {
-				sb.append(s[random % s.length]);
-				random /= s.length;
-			}
-
-			String CouponCode = sb.toString();
-			System.out.println("Coupon Code: " + CouponCode);
-		}
-	}
+       }
 }
-        
